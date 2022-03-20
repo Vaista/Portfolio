@@ -190,6 +190,10 @@ body {
     color: #808080;
 }
 
+.resume-link:hover {
+    color: #000;
+}
+
 .details_btn:hover {
     background-color: rgb(240,242,245, 0.9);
 }
