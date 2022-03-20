@@ -1,12 +1,14 @@
+import os
+
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 from smtplib import SMTP
 
 
 app = Flask(__name__)
-smtp_email = 'aforalfabforbravo12@outlook.com'
+smtp_email = os.environ.get('outlook_email')
 receiving_email = 'vsharma5295@gmail.com'
-smtp_pwd = '1PF(aO6GiTP8l4LAt#'
+smtp_pwd = os.environ.get('outlook_pwd')
 
 
 @app.route('/', methods=['GET', 'POST'])
