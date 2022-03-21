@@ -40,7 +40,7 @@ window.addEventListener("scroll", reveal);
 
 var toast_option = {
     animation: true,
-    delay: 7000
+    delay: 5000
 };
 
 
