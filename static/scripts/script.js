@@ -37,3 +37,12 @@ window.addEventListener("scroll", reveal);
       }, false)
     })
 })()
+
+var toast_option = {
+    animation: true,
+    delay: 7000
+};
+
+
+
+

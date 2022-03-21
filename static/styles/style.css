@@ -2,6 +2,19 @@ body {
     margin: 0 auto;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+    border-left: 1px solid #E6ECF8;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #203978;
+}
+
 .intro-heading {
     font-family: 'Lora', serif;
     font-weight: 600;
@@ -77,6 +90,28 @@ body {
 
 }
 
+.myToastClass {
+    border-radius: 12px;
+}
+
+.myToastClass i {
+    color: #203978;
+    margin-right: 6px;
+}
+
+.myToastClass .toast-body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #696969;
+    font-size: 0.80rem;
+}
+
+.toast-custom-header {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #4D4D4D;
+    font-size: 0.87rem;
+}
 
 /*Curved Div, welcome board and Navigation*/
 .curved_div {
@@ -984,7 +1019,7 @@ body {
 
     .links a {
         margin: auto;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .links a i {

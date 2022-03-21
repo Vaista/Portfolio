@@ -25,7 +25,7 @@
       <title>Vaibhav Sharma</title>
   </head>
 
-  <body>
+  <body onload="flashMessage()">
       <nav class="navbar navbar-expand-md navbar-light static-top" style="background: linear-gradient(to right, #8AEDF6, #7EC9F5, #60A2F5); border:none;">
         <button class="navbar-toggler nav_button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -300,6 +300,35 @@
           </div>
       </div>
 
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast hide myToastClass" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="ri-chat-1-fill"></i>
+                <strong class="me-auto toast-custom-header">{{ msg_status }}</strong>
+                <small>Just Now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                {% if msg_status == 'Success': %}
+                    Message sent successfully. I will reach back to you as soon as possible. Thank you.
+                {% else: %}
+                    An error occurred sending message. Please use alternate options available at the bottom of the page.
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flashMessage()
+        {
+            if ("{{ flash_message }}" == "sending_message") {
+                var toastHTML = document.getElementById("liveToast");
+                var toastElement = new bootstrap.Toast(toastHTML, toast_option);
+                toastElement.show()
+            }
+        }
+
+    </script>
 
     <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
